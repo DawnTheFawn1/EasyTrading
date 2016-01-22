@@ -1,0 +1,21 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+group = "io.github.RysingDragon"
+archivesBaseName = "SimpleTrading"
+version = '0.1'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven {
+        name 'Sponge maven repo'
+        url 'http://repo.spongepowered.org/maven'
+    }
+}
+
+dependencies {
+    compile "org.spongepowered:spongeapi:3.1.0-SNAPSHOT"
+}
