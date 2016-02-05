@@ -13,11 +13,11 @@ import ninja.leaping.configurate.loader.ConfigurationLoader;
 
 public class Config {
 
-	File file = new File("config/SimpleTrading.conf");
-	ConfigurationLoader<CommentedConfigurationNode> loader = HoconConfigurationLoader.builder().setFile(file).build(); 
-	CommentedConfigurationNode configNode = loader.createEmptyNode(ConfigurationOptions.defaults());
+	public static File file = new File("config/SimpleTrading.conf");
+	public static ConfigurationLoader<CommentedConfigurationNode> loader = HoconConfigurationLoader.builder().setFile(file).build(); 
+	public static CommentedConfigurationNode configNode = loader.createEmptyNode(ConfigurationOptions.defaults());
 	
-	public static Config config = new Config();
+	private static Config config = new Config();
 	
 	public static Config getConfig() {
 		return config;
