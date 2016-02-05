@@ -42,6 +42,7 @@ public class TradeListener {
 	public void onTradeAccept(TradeAcceptEvent event) {
 		
 		Trade trade = new Trade(event.getSender(), event.getReceiver());
+		TradeUtils.trades.add(trade);
 	}
 	
 }

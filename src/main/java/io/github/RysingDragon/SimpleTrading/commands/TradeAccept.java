@@ -2,6 +2,7 @@ package io.github.RysingDragon.SimpleTrading.commands;
 
 import java.util.List;
 
+import org.spongepowered.api.Sponge;
 import org.spongepowered.api.command.CommandException;
 import org.spongepowered.api.command.CommandResult;
 import org.spongepowered.api.command.CommandSource;
@@ -10,6 +11,7 @@ import org.spongepowered.api.command.spec.CommandExecutor;
 import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.text.Text;
 
+import io.github.RysingDragon.SimpleTrading.events.TradeAcceptEvent;
 import io.github.RysingDragon.SimpleTrading.utils.Request;
 import io.github.RysingDragon.SimpleTrading.utils.TradeUtils;
 
@@ -28,9 +30,10 @@ public class TradeAccept implements CommandExecutor{
 			} 
 			
 			for (Request r : reqs) {
-				if ( (sender == r.getReceiver() || sender == r.getSender()) && (receiver == r.getSender() || receiver == r.getReceiver()) ) {
+				if ( (sender == r.getReceiver() ) && (receiver == r.getSender() ) ) {
 					sender.sendMessage(Text.of("trade started"));
 					receiver.sendMessage(Text.of("trade started"));
+					Sponge.getEventManager().post(new TradeAcceptEvent(sender, receiver));
 				} else {
 					sender.sendMessage(Text.of("trade not found"));
 				}
