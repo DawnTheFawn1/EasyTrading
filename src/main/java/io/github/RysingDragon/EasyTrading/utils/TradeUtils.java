@@ -1,4 +1,4 @@
-package io.github.RysingDragon.SimpleTrading.utils;
+package io.github.RysingDragon.EasyTrading.utils;
 
 import java.util.ArrayList;
 import java.util.List;

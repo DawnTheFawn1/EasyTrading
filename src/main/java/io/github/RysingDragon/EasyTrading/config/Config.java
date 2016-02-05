@@ -1,10 +1,10 @@
-package io.github.RysingDragon.SimpleTrading.config;
+package io.github.RysingDragon.EasyTrading.config;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 
-import io.github.RysingDragon.SimpleTrading.SimpleTrading;
+import io.github.RysingDragon.EasyTrading.EasyTrading;
 import ninja.leaping.configurate.ConfigurationNode;
 import ninja.leaping.configurate.ConfigurationOptions;
 import ninja.leaping.configurate.commented.CommentedConfigurationNode;

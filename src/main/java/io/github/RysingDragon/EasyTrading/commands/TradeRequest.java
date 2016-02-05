@@ -1,4 +1,4 @@
-package io.github.RysingDragon.SimpleTrading.commands;
+package io.github.RysingDragon.EasyTrading.commands;
 
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.command.CommandException;
@@ -9,10 +9,10 @@ import org.spongepowered.api.command.spec.CommandExecutor;
 import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.text.Text;
 
-import io.github.RysingDragon.SimpleTrading.SimpleTrading;
-import io.github.RysingDragon.SimpleTrading.events.TradeRequestEvent;
-import io.github.RysingDragon.SimpleTrading.utils.Request;
-import io.github.RysingDragon.SimpleTrading.utils.TradeUtils;
+import io.github.RysingDragon.EasyTrading.EasyTrading;
+import io.github.RysingDragon.EasyTrading.events.TradeRequestEvent;
+import io.github.RysingDragon.EasyTrading.utils.Request;
+import io.github.RysingDragon.EasyTrading.utils.TradeUtils;
 
 public class TradeRequest implements CommandExecutor{
 

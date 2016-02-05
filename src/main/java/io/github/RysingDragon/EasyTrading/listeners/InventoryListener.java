@@ -1,4 +1,4 @@
-package io.github.RysingDragon.SimpleTrading.listeners;
+package io.github.RysingDragon.EasyTrading.listeners;
 
 import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.event.Listener;
@@ -7,7 +7,7 @@ import org.spongepowered.api.event.item.inventory.ClickInventoryEvent;
 import org.spongepowered.api.event.item.inventory.DropItemEvent;
 import org.spongepowered.api.text.Text;
 
-import io.github.RysingDragon.SimpleTrading.utils.TradeUtils;
+import io.github.RysingDragon.EasyTrading.utils.TradeUtils;
 
 public class InventoryListener {
 

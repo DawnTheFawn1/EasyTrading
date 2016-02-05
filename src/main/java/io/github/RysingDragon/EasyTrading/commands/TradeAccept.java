@@ -1,4 +1,4 @@
-package io.github.RysingDragon.SimpleTrading.commands;
+package io.github.RysingDragon.EasyTrading.commands;
 
 import java.util.List;
 
@@ -11,9 +11,9 @@ import org.spongepowered.api.command.spec.CommandExecutor;
 import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.text.Text;
 
-import io.github.RysingDragon.SimpleTrading.events.TradeAcceptEvent;
-import io.github.RysingDragon.SimpleTrading.utils.Request;
-import io.github.RysingDragon.SimpleTrading.utils.TradeUtils;
+import io.github.RysingDragon.EasyTrading.events.TradeAcceptEvent;
+import io.github.RysingDragon.EasyTrading.utils.Request;
+import io.github.RysingDragon.EasyTrading.utils.TradeUtils;
 
 public class TradeAccept implements CommandExecutor{
 

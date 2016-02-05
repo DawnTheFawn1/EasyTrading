@@ -1,4 +1,4 @@
-package io.github.RysingDragon.SimpleTrading;
+package io.github.RysingDragon.EasyTrading;
 
 import java.nio.file.Path;
 import java.util.HashMap;
@@ -19,19 +19,19 @@ import org.spongepowered.api.text.Text;
 
 import com.google.inject.Inject;
 
-import io.github.RysingDragon.SimpleTrading.commands.TradeAccept;
-import io.github.RysingDragon.SimpleTrading.commands.TradeCancel;
-import io.github.RysingDragon.SimpleTrading.commands.TradeRequest;
-import io.github.RysingDragon.SimpleTrading.config.Config;
-import io.github.RysingDragon.SimpleTrading.listeners.InventoryListener;
-import io.github.RysingDragon.SimpleTrading.listeners.TradeListener;
+import io.github.RysingDragon.EasyTrading.commands.TradeAccept;
+import io.github.RysingDragon.EasyTrading.commands.TradeCancel;
+import io.github.RysingDragon.EasyTrading.commands.TradeRequest;
+import io.github.RysingDragon.EasyTrading.config.Config;
+import io.github.RysingDragon.EasyTrading.listeners.InventoryListener;
+import io.github.RysingDragon.EasyTrading.listeners.TradeListener;
 import ninja.leaping.configurate.commented.CommentedConfigurationNode;
 import ninja.leaping.configurate.loader.ConfigurationLoader;
 
 @Plugin(id = "simpletrading", name = "SimpleTrading", version = "0.1")
-public class SimpleTrading {
+public class EasyTrading {
 
-	public static SimpleTrading instance;
+	public static EasyTrading instance;
 	private Game game = Sponge.getGame();
 	
 	@Inject

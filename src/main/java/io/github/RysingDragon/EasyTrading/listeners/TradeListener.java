@@ -1,4 +1,4 @@
-package io.github.RysingDragon.SimpleTrading.listeners;
+package io.github.RysingDragon.EasyTrading.listeners;
 
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
@@ -9,12 +9,12 @@ import org.spongepowered.api.scheduler.Scheduler;
 import org.spongepowered.api.scheduler.Task;
 import org.spongepowered.api.text.Text;
 
-import io.github.RysingDragon.SimpleTrading.SimpleTrading;
-import io.github.RysingDragon.SimpleTrading.events.TradeAcceptEvent;
-import io.github.RysingDragon.SimpleTrading.events.TradeRequestEvent;
-import io.github.RysingDragon.SimpleTrading.utils.Request;
-import io.github.RysingDragon.SimpleTrading.utils.Trade;
-import io.github.RysingDragon.SimpleTrading.utils.TradeUtils;
+import io.github.RysingDragon.EasyTrading.EasyTrading;
+import io.github.RysingDragon.EasyTrading.events.TradeAcceptEvent;
+import io.github.RysingDragon.EasyTrading.events.TradeRequestEvent;
+import io.github.RysingDragon.EasyTrading.utils.Request;
+import io.github.RysingDragon.EasyTrading.utils.Trade;
+import io.github.RysingDragon.EasyTrading.utils.TradeUtils;
 
 public class TradeListener {
 
@@ -35,7 +35,7 @@ public class TradeListener {
 			}
 		};
 		
-		Sponge.getScheduler().createTaskBuilder().interval(1, TimeUnit.SECONDS).delay(1, TimeUnit.SECONDS).execute(TradeTimer).submit(SimpleTrading.instance);
+		Sponge.getScheduler().createTaskBuilder().interval(1, TimeUnit.SECONDS).delay(1, TimeUnit.SECONDS).execute(TradeTimer).submit(EasyTrading.instance);
 	}
 	
 	@Listener

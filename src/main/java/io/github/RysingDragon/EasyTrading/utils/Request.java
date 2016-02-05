@@ -1,4 +1,4 @@
-package io.github.RysingDragon.SimpleTrading.utils;
+package io.github.RysingDragon.EasyTrading.utils;
 
 import org.spongepowered.api.entity.living.player.Player;
 

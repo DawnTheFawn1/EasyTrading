@@ -1,4 +1,4 @@
-package io.github.RysingDragon.SimpleTrading.commands;
+package io.github.RysingDragon.EasyTrading.commands;
 
 import org.spongepowered.api.command.CommandException;
 import org.spongepowered.api.command.CommandResult;
@@ -8,8 +8,8 @@ import org.spongepowered.api.command.spec.CommandExecutor;
 import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.text.Text;
 
-import io.github.RysingDragon.SimpleTrading.utils.Trade;
-import io.github.RysingDragon.SimpleTrading.utils.TradeUtils;
+import io.github.RysingDragon.EasyTrading.utils.Trade;
+import io.github.RysingDragon.EasyTrading.utils.TradeUtils;
 
 public class TradeCancel implements CommandExecutor{
 
