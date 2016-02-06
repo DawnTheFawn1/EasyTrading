@@ -5,8 +5,10 @@ import org.spongepowered.api.event.Listener;
 import org.spongepowered.api.event.filter.cause.First;
 import org.spongepowered.api.event.item.inventory.ClickInventoryEvent;
 import org.spongepowered.api.event.item.inventory.DropItemEvent;
+import org.spongepowered.api.item.inventory.ItemStack;
 import org.spongepowered.api.text.Text;
 
+import io.github.RysingDragon.EasyTrading.utils.Trade;
 import io.github.RysingDragon.EasyTrading.utils.TradeUtils;
 
 public class InventoryListener {
@@ -22,7 +24,27 @@ public class InventoryListener {
 	@Listener
 	public void onInventoryClick(ClickInventoryEvent e, @First Player player) {
 		if (TradeUtils.isTrading(player)) {
-			player.sendMessage(Text.of("You are not allowed to interact with your inventory during a trade"));
+			Trade trade = TradeUtils.getTrade(player);
+			if (!(e.getCursorTransaction().getFinal() == e.getCursorTransaction().getFinal().NONE)) {
+				ItemStack item = e.getCursorTransaction().getFinal().createStack();
+				if (trade.getSender() == player) {
+					if (!trade.senderItems.contains(item)) {
+						player.sendMessage(Text.of("Item stack added to offers"));
+						trade.senderItems.add(item);
+					} else {
+						player.sendMessage(Text.of("Item stack removed from offers"));
+						trade.senderItems.remove(item);
+					}
+				} else if (trade.getReceiver() == player) {
+					if (!trade.senderItems.contains(item)) {
+						player.sendMessage(Text.of("Item stack added to offers"));
+						trade.receiverItems.add(item);
+					} else {
+						player.sendMessage(Text.of("Item stack removed from offers"));
+						trade.receiverItems.remove(item);
+					}
+				}
+			}
 			e.setCancelled(true);
 		}
 	}
