@@ -16,17 +16,17 @@ public class TradeCancel implements CommandExecutor{
 	public CommandResult execute(CommandSource src, CommandContext args) throws CommandException {
 		if (src instanceof Player) {
 			Player player = (Player)src;
-			Player trader = (Player)args.getOne("player").get();
-			if(TradeUtils.isTrading(player)) {
-				for (Trade t : TradeUtils.trades) {
-					if ((t.getSender() == player || t.getReceiver() == player) && (t.getSender() == trader || t.getReceiver() == trader)) {
-						TradeUtils.trades.remove(t);
-						player.sendMessage(Text.of("Your trade with ", trader.getName(), " has been cancelled!"));
-						trader.sendMessage(Text.of("Your trade with ", player.getName(), " has been cancelled!"));
-					}
-				}
+			
+			if(TradeUtils.isTrading(player)) { 
+				Trade t = TradeUtils.getTrade(player);
+				TradeUtils.getTrades().remove(t);
+				t.getReceiver().sendMessage(Text.of("Your trade with ", t.getSender().getName(), " has been cancelled!"));
+				t.getSender().sendMessage(Text.of("Your trade with ", t.getReceiver().getName(), " has been cancelled!"));
+				return CommandResult.success();
+			} else {
+				player.sendMessage(Text.of("You are not in a trade!"));
+				return CommandResult.empty();
 			}
-			return CommandResult.success();
 		} else {
 			src.sendMessage(Text.of("You must be a player to use this command!"));
 			return CommandResult.empty();

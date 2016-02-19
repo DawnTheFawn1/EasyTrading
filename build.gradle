@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 
 group = "io.github.RysingDragon"
-archivesBaseName = "SimpleTrading"
+archivesBaseName = "EasyTrading"
 version = '1.0'
 
 sourceCompatibility = 1.8

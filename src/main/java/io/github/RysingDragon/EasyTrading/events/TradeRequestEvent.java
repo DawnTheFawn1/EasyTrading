@@ -19,7 +19,7 @@ public class TradeRequestEvent extends AbstractEvent implements Cancellable{
 	}
 	
 	public Cause getCause() {
-		return Cause.of(EasyTrading.instance);
+		return Cause.of(this.sender);
 	}
 
 	public boolean isCancelled() {
