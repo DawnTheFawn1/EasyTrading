@@ -27,6 +27,7 @@ import io.github.RysingDragon.EasyTrading.commands.TradeAccept;
 import io.github.RysingDragon.EasyTrading.commands.TradeCancel;
 import io.github.RysingDragon.EasyTrading.commands.TradeOfferMoney;
 import io.github.RysingDragon.EasyTrading.commands.TradeRequest;
+import io.github.RysingDragon.EasyTrading.commands.TradeStatus;
 import io.github.RysingDragon.EasyTrading.config.Config;
 import io.github.RysingDragon.EasyTrading.data.ImmutableTradeData;
 import io.github.RysingDragon.EasyTrading.data.TradeData;
@@ -94,7 +95,12 @@ public class EasyTrading {
 				.child(tradeMoney, "money")
 				.build();
 		
+		CommandSpec tradeStatus = CommandSpec.builder()
+				.executor(new TradeStatus())
+				.build();
+		
 		CommandSpec trade = CommandSpec.builder()
+				.child(tradeStatus, "status")
 				.child(tradeOffer, "offer")
 				.child(tradeCancel, "cancel")
 				.child(tradeRequest, "request")
